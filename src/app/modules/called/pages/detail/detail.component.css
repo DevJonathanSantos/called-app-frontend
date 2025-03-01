@@ -1,0 +1,56 @@
+.panel-detail {
+    width: 100%;
+    height: 150px;
+    padding: 20px;
+    border-radius: 7px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+    line-height: 1.6;
+    position: relative;
+    color: #0d6efd;
+}
+.left-box {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40%;
+}
+
+.right-box {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40%;
+}
+
+.line {
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    height: 75%;
+    width: 1px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+}
+
+.message {
+    width: 100%;
+    margin: 15px 0px;
+    padding: 5px 15px;
+    border-radius: 7px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+    line-height: 1.6;
+    position: relative;
+}
+
+.perfil {
+    width: 60px;
+}
+
+.perfil img {
+    border-radius: 50%;
+}
+
+span {
+    color: dimgray;
+}

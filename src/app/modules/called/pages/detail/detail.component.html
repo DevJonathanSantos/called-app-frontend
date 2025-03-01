@@ -1,0 +1,95 @@
+<h1>Detalhe do chamado</h1>
+<div class="panel-detail">
+    <div class="left-box">
+        <p>Chamado: <span>515195</span></p>
+        <p>Assunto: <span>Troca de cartucho</span></p>
+        <p>Criado por:<span> Escrita - Silvano de Leme</span></p>
+        <p>Data de criação: <span>12/08/2023 - 15:14:00</span></p>
+    </div>
+    <div class="right-box">
+        <p>Status: <span>Aguardando análise</span></p>
+        <p>Responsavel atual: <span>Tecnologia</span></p>
+        <p>Ultima atualização em: <span>12/08/2023 - 15:14:00</span></p>
+    </div>
+    <div class="line"></div>
+</div>
+
+<div class="message" style="background: #f4f4f4">
+    <div class="perfil">
+        <img
+            src="https://picsum.photos/200/200"
+            width="100%"
+            height="100%"
+            alt="Imagem de Perfil Aleatória" />
+    </div>
+    <p style="position: relative; top: -50px; left: 70px">Adm local - Silvano de Leme</p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. At nemo in nisi assumenda dolorem
+        similique eveniet reprehenderit sapiente voluptatibus impedit deleniti, dolores consequatur!
+        Molestias reprehenderit repellat mollitia error ad voluptatum!
+    </p>
+
+    <div class="anexos" style="margin-top: 15px">
+        Anexos:
+        <button type="button" class="btn btn-link">Nota fiscal</button>
+        <button type="button" class="btn btn-link">Foto do produdo</button>
+    </div>
+    <p-overlayPanel #op>
+        <p-fileUpload
+            chooseLabel="Escolher"
+            uploadLabel="Carregar"
+            cancelLabel="Cancelar"
+            name="demo[]"
+            (onUpload)="onUpload($event)"
+            [multiple]="true"
+            accept="image/*">
+            <ng-template pTemplate="content">
+                <ul *ngIf="uploadedFiles.length">
+                    <li *ngFor="let file of uploadedFiles">
+                        {{ file.name }} - {{ file.size }} bytes
+                    </li>
+                </ul>
+            </ng-template>
+        </p-fileUpload>
+    </p-overlayPanel>
+    <button class="btn btn-primary" (click)="op.toggle($event)">Adicionar anexo</button>
+</div>
+
+<div class="message">
+    <div class="perfil">
+        <img
+            src="https://picsum.photos/200/200"
+            width="100%"
+            height="100%"
+            alt="Imagem de Perfil Aleatória" />
+    </div>
+    <p style="position: relative; top: -50px; left: 70px">Tecnologia - Jonathan</p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. At nemo in nisi assumenda dolorem
+        similique eveniet reprehenderit sapiente voluptatibus impedit deleniti, dolores consequatur!
+        Molestias reprehenderit repellat mollitia error ad voluptatum!
+    </p>
+
+    <div class="anexos" style="margin-top: 15px">Anexos:</div>
+    <p-overlayPanel #op>
+        <p-fileUpload
+            chooseLabel="Escolher"
+            uploadLabel="Carregar"
+            cancelLabel="Cancelar"
+            name="demo[]"
+            (onUpload)="onUpload($event)"
+            [multiple]="true"
+            accept="image/*">
+            <ng-template pTemplate="content">
+                <ul *ngIf="uploadedFiles.length">
+                    <li *ngFor="let file of uploadedFiles">
+                        {{ file.name }} - {{ file.size }} bytes
+                    </li>
+                </ul>
+            </ng-template>
+        </p-fileUpload>
+    </p-overlayPanel>
+    <button class="btn btn-primary" (click)="op.toggle($event)">Adicionar anexo</button>
+</div>
+<textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+<button class="btn btn-primary" style="margin-top: 10px; float: right">Adicionar resposta</button>

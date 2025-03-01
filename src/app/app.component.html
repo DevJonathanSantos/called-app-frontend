@@ -1,0 +1,27 @@
+<div class="main">
+    <div class="sidbar">
+        <div class="logout"><i class="bi bi-box-arrow-left"></i></div>
+        <div class="profile" routerLink="/">JD. Leonidas Moreida</div>
+        <div>
+            <ul>
+                <i class="bi bi-card-checklist"></i>
+                Chamados
+
+                <li class="">Meus chamados</li>
+                <li class="" routerLink="/called-list">Lista de chamados</li>
+            </ul>
+            <ul>
+                <i class="bi bi-gear"></i>
+                Gestão
+                <li class="" routerLink="/church-list">Casas de oração</li>
+                <li class="" routerLink="/department-list">Departamentos</li>
+                <li class="" routerLink="/user-list">Usuários</li>
+                <li class="">Permissões</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="body">
+        <router-outlet></router-outlet>
+    </div>
+</div>

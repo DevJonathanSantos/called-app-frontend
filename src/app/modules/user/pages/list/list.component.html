@@ -1,0 +1,50 @@
+<div>
+    <h1 style="color: black">Usuários</h1>
+    <button class="btn btn-primary" (click)="register()">Cadastrar</button>
+    <div class="card">
+        <p-table
+            [value]="users"
+            [paginator]="true"
+            [rows]="10"
+            [showCurrentPageReport]="true"
+            styleClass="p-datatable-striped"
+            [tableStyle]="{ 'min-width': '50rem' }"
+            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+            [scrollable]="true"
+            scrollDirection="both"
+            scrollHeight="63vh">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th></th>
+                    <th>Id</th>
+                    <th style="width: 25%">Nome</th>
+                    <th style="width: 25%">Email</th>
+                    <th style="width: 25%">Departamento</th>
+                    <th style="width: 25%">Perfil</th>
+                    <th style="width: 25%">Data de criação</th>
+                    <th style="width: 25%">Data de atualização</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-user>
+                <tr>
+                    <td (click)="edit(user.id)">
+                        <i class="bi bi-pencil-square"></i>
+                    </td>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.departmentName }}</td>
+                    <td>{{ user.profileName }}</td>
+                    <td>{{ user.creationDate | date: 'dd/MM/yyyy' }}</td>
+                    <td>{{ user.updateDate | date: 'dd/MM/yyyy' }}</td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="paginatorleft">
+                <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+            </ng-template>
+            <ng-template pTemplate="paginatorright">
+                <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+            </ng-template>
+        </p-table>
+    </div>
+</div>

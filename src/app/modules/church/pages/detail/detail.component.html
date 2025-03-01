@@ -1,0 +1,45 @@
+<h1 style="color: black">Casa de oração</h1>
+
+<form class="row g-3" [formGroup]="formGroup">
+    <div class="col-md-5">
+        <label for="name" class="filter-label">Nome</label>
+        <input
+            id="name"
+            type="text"
+            class="input"
+            [style]="{ height: '40px' }"
+            pInputText
+            formControlName="name" />
+    </div>
+
+    <div class="col-md-1">
+        <label for="groupId" class="filter-label">Grupo</label>
+        <input
+            id="groupId"
+            type="number"
+            class="input"
+            [style]="{ height: '40px' }"
+            pInputText
+            formControlName="groupId" />
+    </div>
+
+    <div class="col-md-3">
+        <label for="createdAt" class="filter-label">Data de criação</label>
+        <p-calendar
+            id="createdAt"
+            formControlName="createdAt"
+            [style]="{ height: '40px' }"></p-calendar>
+    </div>
+
+    <div class="col-md-3">
+        <label for="updatedAt" class="filter-label">Data de atualização</label>
+        <p-calendar
+            id="updatedAt"
+            formControlName="updatedAt"
+            [style]="{ height: '40px' }"></p-calendar>
+    </div>
+</form>
+
+<button class="btn btn-primary">Cadastrar</button>
+<button class="btn btn-danger" *ngIf="!isNewChurch" (click)="delete()">Deletar</button>
+<button class="btn btn-secondary" (click)="back()">Voltar</button>

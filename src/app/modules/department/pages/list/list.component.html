@@ -1,0 +1,46 @@
+<div>
+    <h1 style="color: black">Departamentos</h1>
+    <button class="btn btn-primary" (click)="register()">Cadastrar</button>
+    <div class="card">
+        <p-table
+            [value]="departments"
+            [paginator]="true"
+            [rows]="10"
+            [showCurrentPageReport]="true"
+            styleClass="p-datatable-striped"
+            [tableStyle]="{ 'min-width': '50rem' }"
+            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+            [scrollable]="true"
+            scrollDirection="both"
+            scrollHeight="63vh">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th></th>
+                    <th>Id</th>
+                    <th style="width: 25%">Nome</th>
+                    <th style="width: 25%">Descrição</th>
+                    <th style="width: 25%">Data de criação</th>
+                    <th style="width: 25%">Data de atualização</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-department>
+                <tr>
+                    <td (click)="edit(department.id)">
+                        <i class="bi bi-pencil-square"></i>
+                    </td>
+                    <td>{{ department.id }}</td>
+                    <td>{{ department.name }}</td>
+                    <td>{{ department.description }}</td>
+                    <td>{{ department.createdAt | date: 'dd/MM/yyyy' }}</td>
+                    <td>{{ department.updatedAt | date: 'dd/MM/yyyy' }}</td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="paginatorleft">
+                <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+            </ng-template>
+            <ng-template pTemplate="paginatorright">
+                <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+            </ng-template>
+        </p-table>
+    </div>
+</div>

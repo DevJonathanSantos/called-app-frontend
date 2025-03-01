@@ -1,0 +1,50 @@
+<div>
+    <h1 style="color: black">Chamados</h1>
+    <button class="btn btn-primary" (click)="register()">Abrir novo chamado</button>
+    <div class="card">
+        <p-table
+            [value]="calleds"
+            [paginator]="true"
+            [rows]="10"
+            [showCurrentPageReport]="true"
+            styleClass="p-datatable-striped"
+            [tableStyle]="{ 'min-width': '50rem', 'font-size': '14px' }"
+            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+            [scrollable]="true"
+            scrollDirection="both"
+            scrollHeight="63vh">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th></th>
+                    <th>Id</th>
+                    <th style="width: 25%">Assunto</th>
+                    <th style="width: 25%">Criado por</th>
+                    <th style="width: 25%">Responsavel atual</th>
+                    <th style="width: 25%">Status</th>
+                    <th style="width: 25%">Data de criação</th>
+                    <th style="width: 25%">Data de atualização</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-called>
+                <tr>
+                    <td (click)="edit(called.id)">
+                        <i class="bi bi-pencil-square"></i>
+                    </td>
+                    <td>{{ called.id }}</td>
+                    <td>{{ called.subject }}</td>
+                    <td>{{ called.createdBy }}</td>
+                    <td>{{ called.currentResponsible }}</td>
+                    <td>{{ called.statusName }}</td>
+                    <td>{{ called.createdAt | date: 'dd/MM/yyyy' }}</td>
+                    <td>{{ called.updatedAt | date: 'dd/MM/yyyy' }}</td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="paginatorleft">
+                <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+            </ng-template>
+            <ng-template pTemplate="paginatorright">
+                <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+            </ng-template>
+        </p-table>
+    </div>
+</div>

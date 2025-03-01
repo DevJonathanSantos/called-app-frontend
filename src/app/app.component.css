@@ -1,0 +1,66 @@
+.main {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.sidbar {
+    background-color: #fff;
+    position: relative;
+    width: 20%;
+    text-align: center;
+    color: #444647;
+    font-family: 'Roboto';
+    height: 100%;
+    margin: 0px 2% 0 0;
+}
+
+.sidbar .logout {
+    font-size: 22px;
+    float: left;
+    margin: 12px;
+    position: absolute;
+    color: #0d6efd;
+}
+
+.sidbar ul {
+    margin: 20px;
+    padding: 10px;
+    border-radius: 7px;
+    font-size: 20px;
+    text-align: left;
+}
+
+.sidbar ul li {
+    left: 30px;
+    position: relative;
+    margin: 5px 0;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.sidbar ul li:hover {
+    color: #0d6efd;
+    background-color: #f4f6f6;
+    border-radius: 10px 0 0 10px;
+}
+
+.sidbar ul li i {
+    margin: 10px;
+}
+
+.profile {
+    font-weight: bold;
+    margin-top: 80px;
+    font-size: 20px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.body {
+    width: 83%;
+    height: 100%;
+    background-color: #fff;
+    padding: 30px;
+    overflow: auto;
+}
